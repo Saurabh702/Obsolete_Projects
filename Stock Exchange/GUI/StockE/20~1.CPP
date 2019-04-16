@@ -120,13 +120,14 @@ void Home::home1()
 void Home::animate(int n,int m)
 {
     r+=2;
-    if(r>10||r<1)r=1;
+    if(r>10||r<1)
+        r=1;
     if(n==1)
     {
         setcolor(YELLOW);
-	switch(m)
+        switch(m)
         {
-	case 1 :
+        case 1 :
             rectangle(235,93,405,117);
             setcolor(YELLOW);
             circle(200,101,r);
@@ -138,33 +139,38 @@ void Home::animate(int n,int m)
             break;
         case 7 :
             rectangle(235,317,405,342);
-	    setcolor(YELLOW);
-	    circle(200,332,r);
+            setcolor(YELLOW);
+            circle(200,332,r);
             break;
         case 8 :
             rectangle(105,403,265,427);
             setcolor(YELLOW);
-	    circle(70,411,r);
+            circle(70,411,r);
             break;
-	case 9 :
+        case 9 :
             rectangle(405,403,565,427);
             setcolor(YELLOW);
             circle(370,411,r);
             break;
         }
         setcolor(CYAN);
-        if(m!=1)rectangle(235,93,405,117);
-        if(m!=4)rectangle(235,203,405,227);
-        if(m!=7)rectangle(235,318,405,342);
-        if(m!=8)rectangle(105,403,265,427);
-        if(m!=9)rectangle(405,403,565,427);
-	setcolor(0);
-	delay(100);
+        if(m!=1)
+            rectangle(235,93,405,117);
+        if(m!=4)
+            rectangle(235,203,405,227);
+        if(m!=7)
+            rectangle(235,318,405,342);
+        if(m!=8)
+            rectangle(105,403,265,427);
+        if(m!=9)
+            rectangle(405,403,565,427);
+        setcolor(0);
+        delay(100);
         circle(200,101,r);
         circle(200,215,r);
         circle(200,332,r);
         circle(70,411,r);
-	circle(370,411,r);
+        circle(370,411,r);
     }
     if(n==2)
     {
@@ -178,8 +184,8 @@ void Home::animate(int n,int m)
         circle(200,101,r);
         circle(200,215,r);
         circle(200,332,r);
-	circle(70,411,r);
-	circle(370,411,r);
+        circle(70,411,r);
+        circle(370,411,r);
     }
 }
 void Home::getchoice_home()
@@ -190,43 +196,53 @@ void Home::getchoice_home()
     while(1)
     {
         getmousepos(&button,&x,&y);
-        if(x>220&&x<410&&y>80&&y<120)animate(1,1);
-        else if(x>90&&x<270&&y>140&&y<180)animate(1,2);
-        else if(x>390&&x<570&&y>140&&y<180)animate(1,3);
-        else if(x>220&&x<410&&y>200&&y<240)animate(1,4);
-        else if(x>90&&x<270&&y>260&&y<300)animate(1,5);
-        else if(x>390&&x<570&&y>260&&y<300)animate(1,6);
-        else if(x>220&&x<410&&y>330&&y<370)animate(1,7);
-        else if(x>90&&x<270&&y>390&&y<430)animate(1,8);
-	else if(x>390&&x<570&&y>390&&y<430)animate(1,9);
-	else animate(2,0);
+        if(x>220&&x<410&&y>80&&y<120)
+            animate(1,1);
+        else if(x>90&&x<270&&y>140&&y<180)
+            animate(1,2);
+        else if(x>390&&x<570&&y>140&&y<180)
+            animate(1,3);
+        else if(x>220&&x<410&&y>200&&y<240)
+            animate(1,4);
+        else if(x>90&&x<270&&y>260&&y<300)
+            animate(1,5);
+        else if(x>390&&x<570&&y>260&&y<300)
+            animate(1,6);
+        else if(x>220&&x<410&&y>330&&y<370)
+            animate(1,7);
+        else if(x>90&&x<270&&y>390&&y<430)
+            animate(1,8);
+        else if(x>390&&x<570&&y>390&&y<430)
+            animate(1,9);
+        else
+            animate(2,0);
         if(x>230&&x<410&&y>90&&y<120&&(button &1)==1)
         {
             delay(200);
             cleardevice();
-	    closegraph();
+            closegraph();
             admin();
-	}
+        }
         if(x>220&&x<410&&y>200&&y<240&&(button &1)==1)
         {
             delay(200);
             cleardevice();
-	    closegraph();
+            closegraph();
             user();
             cleardevice();
-	    closegraph();
+            closegraph();
             main1();
         }
         if(x>220&&x<410&&y>330&&y<370&&(button &1)==1)
-	{
-	    delay(200);
+        {
+            delay(200);
             cleardevice();
-	    closegraph();
+            closegraph();
             newuser();
             home1();
-	    initmouse();
+            initmouse();
             showmouseptr();
-	}
+        }
         if(x>90&&x<270&&y>390&&y<430&&(button &1)==1)
         {
             cleardevice();
@@ -237,16 +253,16 @@ void Home::getchoice_home()
             settextjustify(1,1);
             outtextxy(getmaxx()/2,getmaxy()/2,"Thank you for using our Software");
             delay(2000);
-	    closegraph();
-	    exit(0);
-	}
+            closegraph();
+            exit(0);
+        }
         if(x>390&&x<570&&y>390&&y<430&&(button &1)==1)
         {
             delay(200);
             cleardevice();
-	    closegraph();
+            closegraph();
             info();
-	    home1();
+            home1();
             initmouse();
             showmouseptr();
         }
@@ -278,8 +294,8 @@ XYScatterGraph::XYScatterGraph(int c, int numpoints)
     color = c;
     for(int i = 0; i < 1000; i++)
     {
-	xpoints[i] = 0.0;
-	ypoints[i] = 0.0;
+        xpoints[i] = 0.0;
+        ypoints[i] = 0.0;
     }
     dataxmin = 1000000;
     dataxmax = -1000000;
@@ -292,18 +308,18 @@ void XYScatterGraph::FillPoints(double yarr[],double xarr[], int len)
 {
     for(int i = 0; i < len; i++)
     {
-	if(i > points)
-	    break;
-	xpoints[i] = int(xarr[i]);
-	ypoints[i] = yarr[i];
-	if(dataymin > ypoints[i])
-	    dataymin = ypoints[i];
-	if(dataymax < ypoints[i])
-	    dataymax = ypoints[i];
-	if(dataxmin > xpoints[i])
-	    dataxmin = xpoints[i];
-	if(dataxmax < xpoints[i])
-	    dataxmax = xpoints[i];
+        if(i > points)
+            break;
+        xpoints[i] = int(xarr[i]);
+        ypoints[i] = yarr[i];
+        if(dataymin > ypoints[i])
+            dataymin = ypoints[i];
+        if(dataymax < ypoints[i])
+            dataymax = ypoints[i];
+        if(dataxmin > xpoints[i])
+            dataxmin = xpoints[i];
+        if(dataxmax < xpoints[i])
+            dataxmax = xpoints[i];
     }
     xlen = dataxmax - dataxmin;
     ylen = dataymax - dataymin;
@@ -323,26 +339,26 @@ void XYScatterGraph::DrawGrid(int index)
     double ystart = dataymax;
     for(int i = 0; i <= 10; i++)
     {
-	double ypos = TPMARGIN +  (i / 10.0 * ymax);
-	double xpos = LTMARGIN + (i / 10.0 * xmax);
-	if( i != 10)
-	    line(LTMARGIN, ypos, LTMARGIN + xmax, ypos);
-	line(xpos, TPMARGIN, xpos, TPMARGIN +  ymax);
-	xstart = dataxmin +  (i) * xlen / 10;
-	ystart = dataymax -  (i) * ylen / 10;
-	char buf[128];
-	if(i == 0)
-	    xstart = 0;
-	sprintf(buf, "%3.1lf", xstart);
-	if( (i % 2) == 0)
-	    outtextxy(xpos - 10, TPMARGIN + ymax + 10, buf);
-	else
-	    outtextxy(xpos - 10, TPMARGIN + ymax + 30, buf);
-	sprintf(buf, "%5.1lf", ystart);
-	if(index == 1)
-	    outtextxy(LTMARGIN - 50, ypos - 5, buf);
-	else
-	    outtextxy(LTMARGIN + xmax + 10 , ypos - 5, buf);
+        double ypos = TPMARGIN +  (i / 10.0 * ymax);
+        double xpos = LTMARGIN + (i / 10.0 * xmax);
+        if( i != 10)
+            line(LTMARGIN, ypos, LTMARGIN + xmax, ypos);
+        line(xpos, TPMARGIN, xpos, TPMARGIN +  ymax);
+        xstart = dataxmin +  (i) * xlen / 10;
+        ystart = dataymax -  (i) * ylen / 10;
+        char buf[128];
+        if(i == 0)
+            xstart = 0;
+        sprintf(buf, "%3.1lf", xstart);
+        if( (i % 2) == 0)
+            outtextxy(xpos - 10, TPMARGIN + ymax + 10, buf);
+        else
+            outtextxy(xpos - 10, TPMARGIN + ymax + 30, buf);
+        sprintf(buf, "%5.1lf", ystart);
+        if(index == 1)
+            outtextxy(LTMARGIN - 50, ypos - 5, buf);
+        else
+            outtextxy(LTMARGIN + xmax + 10, ypos - 5, buf);
     }
 }
 void XYScatterGraph::Draw()
@@ -355,14 +371,14 @@ void XYScatterGraph::Draw()
     setlinestyle(SOLID_LINE, 1, 1);
     for(int j = 0; j < points; j++)
     {
-	int xpos = LTMARGIN + (xpoints[j] - dataxmin) / xlen * xmax;
-	int bottom = 480;
-	int ypos = bottom - TPMARGIN - (ypoints[j] - dataymin) / ylen * ymax;
-	if(j > 0)
-	    line(xold, yold, xpos, ypos);
-	xold = xpos;
-	yold = ypos;
-	delay(100);/* Add this for animation of the plot */
+        int xpos = LTMARGIN + (xpoints[j] - dataxmin) / xlen * xmax;
+        int bottom = 480;
+        int ypos = bottom - TPMARGIN - (ypoints[j] - dataymin) / ylen * ymax;
+        if(j > 0)
+            line(xold, yold, xpos, ypos);
+        xold = xpos;
+        yold = ypos;
+        delay(100);/* Add this for animation of the plot */
     }
 }
 class account
@@ -377,16 +393,16 @@ public:
     }
     void putdata()
     {
-	graphics(0);
-	int maxx=getmaxx()/2;
-	int maxy=getmaxy()/2;
-	setbkcolor(RED);
+        graphics(0);
+        int maxx=getmaxx()/2;
+        int maxy=getmaxy()/2;
+        setbkcolor(RED);
         setcolor(WHITE);
         settextstyle(0,HORIZ_DIR,2);
         outtextxy(maxx-200,maxy-150,"ACCOUNT BALANCE");
         outtextxy(maxx-200,maxy-50,"User Name: ");
-	outtextxy(maxx-42,maxy-50,name);
-	outtextxy(maxx-200,maxy-10,"Account Number: ");
+        outtextxy(maxx-42,maxy-50,name);
+        outtextxy(maxx-200,maxy-10,"Account Number: ");
         outtextxy(maxx+42,maxy-10,acno);
         outtextxy(maxx-200,maxy+30,"Available Balance: ");
         char bal[8];
@@ -395,7 +411,7 @@ public:
         outtextxy(maxx-200,maxy+75,"Press Enter to continue....");
         getch();
         cleardevice();
-	closegraph();
+        closegraph();
     }
 };
 class shares
@@ -419,8 +435,8 @@ public:
         cout<<"Share bought at: "<<setprecision(2)<<cvalue<<endl;
         cout<<"Face value of each share: "<<fvalue<<endl;
         rand_double(fvalue,cvalue);
-	per(fvalue,cvalue);
-	cout<<endl;
+        per(fvalue,cvalue);
+        cout<<endl;
     }
 };
 class company
@@ -482,11 +498,11 @@ public:
     void put1();
     void put()
     {
-	graphics(0);
+        graphics(0);
         int maxx=getmaxx()/2;
         int maxy=getmaxy()/2;
-	setbkcolor(RED);
-	setcolor(WHITE);
+        setbkcolor(RED);
+        setcolor(WHITE);
         settextstyle(0,HORIZ_DIR,1);
         outtextxy(maxx-200,maxy-150,"NAME:");
         outtextxy(maxx-25,maxy-150,name);
@@ -499,11 +515,11 @@ public:
         outtextxy(maxx-200,maxy-60,"ADDRESS: ");
         outtextxy(maxx-25,maxy-60,adr);
         outtextxy(maxx-200,maxy-30,"ACCOUNT NUMBER: ");
-	outtextxy(maxx-25,maxy-30,acno);
-	outtextxy(maxx-200,maxy+40,"Press Enter To Continue....");
+        outtextxy(maxx-25,maxy-30,acno);
+        outtextxy(maxx-200,maxy+40,"Press Enter To Continue....");
         getch();
         cleardevice();
-	closegraph();
+        closegraph();
     }
     void put2()
     {
@@ -559,17 +575,17 @@ age1:
             qe centerstring("Enter a number not a character: ");
             getch();
             clrscr();
-	    cleardevice();
-	    goto age1;
+            cleardevice();
+            goto age1;
         }
         if(age<18)
         {
             qe centerstring("You must be 18 and above to access this platform.");
-	    getch();
-	    qe centerstring("ABORTING PROGRAM !!! (ERROR::User below 18)");
+            getch();
+            qe centerstring("ABORTING PROGRAM !!! (ERROR::User below 18)");
             delay(1500);
             cleardevice();
-	    closegraph();
+            closegraph();
             exit(0);
         }
         if(age>116)
@@ -579,13 +595,13 @@ age1:
             delay(2000);
             centerstring("Only mortals are allowed to use stock exchange");
             qe
-	    delay(2500);
-	    centerstring("ABORTING PROGRAM !!! (ERROR::User is an ASGUARDIAN)");
+            delay(2500);
+            centerstring("ABORTING PROGRAM !!! (ERROR::User is an ASGUARDIAN)");
             delay(2500);
             cleardevice();
-	    closegraph();
+            closegraph();
             exit(0);
-	}
+        }
 pan1:
         centerstring("Enter pan card no. (10 characters): ");
         gets(pan);
@@ -599,14 +615,14 @@ pan1:
             goto pan1;
         }
         centerstring("Enter the address: ");
-	gets(adr);
+        gets(adr);
 acno1:
         memset(acno,0,20);
         centerstring("Enter the bank account no. (9-18 digits) : ");
         gets(acno);
         for(int i=0; i<20; i++)
-	{
-	    if(isalpha(acno[i])&&(!isdigit(acno[i])))
+        {
+            if(isalpha(acno[i])&&(!isdigit(acno[i])))
             {
                 qe centerstring("Account number should only contain digits.");
                 getch();
@@ -619,8 +635,8 @@ acno1:
         if(strlen(acno)<9||strlen(acno)>18)
         {
             qe centerstring("Account number should be between 9 and 18 digits only.");
-	    getch();
-	    memset(acno,0,20);
+            getch();
+            memset(acno,0,20);
             clrscr();
             cleardevice();
             goto acno1;
@@ -633,7 +649,7 @@ acno1:
         memset(name,0,20);
         check1.close();
         cleardevice();
-	closegraph();
+        closegraph();
         main1();
     }
 }
@@ -665,8 +681,8 @@ lb:
         cin.clear();
         cin.ignore();
         cout<<"Enter a number not a character: "<<endl;
-	delay(2000);
-	goto lb;
+        delay(2000);
+        goto lb;
     }
     switch(ch)
     {
@@ -679,14 +695,14 @@ lb:
         newu m;
         cout<<"NAME: ";
         puts(name);
-	strcpy(m.name,name);
-	cout<<"AGE: "<<age;
+        strcpy(m.name,name);
+        cout<<"AGE: "<<age;
         qe
         m.age=age;
         cout<<"PAN NO.: "<<pan;
         strcpy(m.pan,pan);
-	qe
-	centerstring("Enter the new address: ");
+        qe
+        centerstring("Enter the new address: ");
         qe
         centerstring("(.) to retain the current address");
         qe
@@ -699,14 +715,14 @@ lb:
         }
 acno2:
         memset(m.acno,0,20);
-	centerstring("Enter the new bank account no. (9-18 digits) : ");
-	qe
+        centerstring("Enter the new bank account no. (9-18 digits) : ");
+        qe
         centerstring("(.) to retain the current account no. ");
         qe
         gotoxy(40,11);
         gets(m.acno);
-	if(strcmp(m.acno,".")==0)
-	{
+        if(strcmp(m.acno,".")==0)
+        {
             strcpy(m.acno,acno);
         }
         else
@@ -719,14 +735,14 @@ acno2:
                     qe
                     getch();
                     memset(m.acno,0,20);
-		    clrscr();
-		    goto acno2;
+                    clrscr();
+                    goto acno2;
                 }
             }
             if(strlen(m.acno)<9||strlen(m.acno)>18)
             {
-		centerstring("Account number should be between 9 and 18 digits only.");
-		qe
+                centerstring("Account number should be between 9 and 18 digits only.");
+                qe
                 getch();
                 memset(m.acno,0,20);
                 clrscr();
@@ -739,14 +755,14 @@ acno2:
         char *fname,*fname1;
         fname=new char[50];
         fname1=new char[50];
-	strcpy(fname1,m.name);
-	strcat(fname1,".dat");
+        strcpy(fname1,m.name);
+        strcat(fname1,".dat");
         strcpy(fname,"C:/TC/BIN/StockE/");
         strcat(fname,fname1);
         ofstream file4,file5;
         file5.open(fname);
-	remove(fname);
-	file5.clear();
+        remove(fname);
+        file5.clear();
         file5.close();
         file4.open(fname,ios::app|ios::binary);
         file4.write((char*)&m,sizeof(m));
@@ -755,18 +771,18 @@ acno2:
         delete[]fname1;
         delete[]fname;
         clrscr();
-	graphics(0);
+        graphics(0);
         int x=getmaxx()/2;
         int y=getmaxy()/2;
         setbkcolor(RED);
-	setcolor(WHITE);
-	settextstyle(0,HORIZ_DIR,2);
+        setcolor(WHITE);
+        settextstyle(0,HORIZ_DIR,2);
         settextjustify(1,1);
         outtextxy(x,y,"Changes have been made to the profile");
         outtextxy(x,y+70,"Going to user menu...");
         delay(1250);
-	cleardevice();
-	closegraph();
+        cleardevice();
+        closegraph();
         goto lb;
     case '3':
         stock(name);
@@ -775,27 +791,27 @@ acno2:
         portfolio(name);
         goto lb;
     case '6':
-	graphics(0);
+        graphics(0);
         int maxx=getmaxx()/2;
         int maxy=getmaxy()/2;
         setbkcolor(RED);
-	setcolor(WHITE);
-	settextstyle(0,HORIZ_DIR,2);
+        setcolor(WHITE);
+        settextstyle(0,HORIZ_DIR,2);
         settextjustify(1,1);
-	outtextxy(maxx,maxy,"You have successfully logged out");
-	outtextxy(maxx,maxy+50,name);
-	delay(2000);
-	cleardevice();
-	break;
+        outtextxy(maxx,maxy,"You have successfully logged out");
+        outtextxy(maxx,maxy+50,name);
+        delay(2000);
+        cleardevice();
+        break;
     case '5':
-	clrscr();
-	balance(name);
-	goto lb;
+        clrscr();
+        balance(name);
+        goto lb;
     default:
-	centerstring("Wrong choice");
-	getch();
-	clrscr();
-	goto lb;
+        centerstring("Wrong choice");
+        getch();
+        clrscr();
+        goto lb;
     }
 }
 void main1()
@@ -806,9 +822,9 @@ void main1()
     restrictmouseptr(1,1,maxx-1,maxy-1);
     s=initmouse();
     if ( s== 0 )
-	cout<<"Mouse support not available.\n";
+        cout<<"Mouse support not available.\n";
     else
-	showmouseptr();
+        showmouseptr();
     Home d;
     d.getchoice_home();
 }
@@ -847,25 +863,25 @@ START:
     char a;
     for(i=0;;)
     {
-	a=getch();
-	if((a>='a'&&a<='z')||(a>='A'&&a<='Z')||(a>='0'&&a<='9'))
-	{
-	    setcolor(WHITE);
-	    pass[i]=a;
-	    ++i;
-	    i1+=17;
-	    outtextxy(maxx-183+i1,maxy-120,"*");
-	}
-	if(a=='\b'&&i>=1)
-	{
-	    cout<<"\b \b";
-	    setcolor(MAGENTA);
-	    outtextxy(maxx-183+i1,maxy-120,"*");
+        a=getch();
+        if((a>='a'&&a<='z')||(a>='A'&&a<='Z')||(a>='0'&&a<='9'))
+        {
+            setcolor(WHITE);
+            pass[i]=a;
+            ++i;
+            i1+=17;
+            outtextxy(maxx-183+i1,maxy-120,"*");
+        }
+        if(a=='\b'&&i>=1)
+        {
+            cout<<"\b \b";
+            setcolor(MAGENTA);
+            outtextxy(maxx-183+i1,maxy-120,"*");
             --i;
             i1-=17;
         }
         if(a=='\r')
-	{
+        {
             pass[i]='\0';
             break;
         }
@@ -885,13 +901,13 @@ START:
     }
     else
     {
-	fin>>pass1;
+        fin>>pass1;
         if(strcmp(pass,pass1)==0)
         {
             cleardevice();
             settextjustify(1,1);
             outtextxy(maxx,maxy,"Password accepted");
-	    delay(500);
+            delay(500);
             fin.close();
             adminfnt();
         }
@@ -899,8 +915,8 @@ START:
         {
             cleardevice();
             settextjustify(1,1);
-	    outtextxy(maxx,maxy,"Incorrect Password");
-	    delay(1000);
+            outtextxy(maxx,maxy,"Incorrect Password");
+            delay(1000);
             fin.close();
             goto START;
         }
@@ -938,20 +954,20 @@ void adminfnt()
     {
     case '1':
         cleardevice();
-	closegraph();
-	textcolor(WHITE);
-	textbackground(MAGENTA);
+        closegraph();
+        textcolor(WHITE);
+        textbackground(MAGENTA);
         lcom();
         gotoxy(40,12);
         break;
     case '4':
-	cleardevice();
+        cleardevice();
         settextstyle(0,HORIZ_DIR,2.5);
         settextjustify(1,1);
         outtextxy(maxx,maxy,"You have successfully logged out");
-	delay(2000);
+        delay(2000);
         cleardevice();
-	closegraph();
+        closegraph();
         main1();
     case '2':
 START1:
@@ -959,13 +975,13 @@ START1:
         cleardevice();
         gotoxy(30,12);
         textcolor(WHITE);
-	cout<<"Enter the old password: "<<endl;
-	gotoxy(37,13);
+        cout<<"Enter the old password: "<<endl;
+        gotoxy(37,13);
         gets(pass);
         fstream f;
         f.open("C:/TC/BIN/StockE/Password.dat",ios::in);
         if(!f)
-	{
+        {
             cerr<<"error in opening of file"<<endl;
         }
         else
@@ -979,13 +995,13 @@ START1:
                 char a,temp[32];
                 for(i=0;;)
                 {
-		    a=getch();
-		    if((a>='a'&&a<='z')||(a>='A'&&a<='Z')||(a>='0'&&a<='9'))
+                    a=getch();
+                    if((a>='a'&&a<='z')||(a>='A'&&a<='Z')||(a>='0'&&a<='9'))
                     {
                         temp[i]=a;
                         ++i;
                         gotoxy(36+i,15);
-			cout<<"*";
+                        cout<<"*";
                     }
                     if(a=='\b'&&i>=1)
                     {
@@ -999,13 +1015,13 @@ START1:
                     }
                 }
                 if(i<=5)
-		{
-		    settextjustify(1,1);
+                {
+                    settextjustify(1,1);
                     settextstyle(0,HORIZ_DIR,2.5);
                     outtextxy(maxx,maxy+100,"Minimum 6 digits needed.Enter Again");
                     getch();
                     goto START1;
-		}
+                }
                 ofstream fout;
                 fout.open("C:/TC/BIN/StockE/Password.dat");
                 fout<<temp;
@@ -1014,22 +1030,22 @@ START1:
                 settextjustify(1,1);
                 settextstyle(0,HORIZ_DIR,2.5);
                 outtextxy(maxx,maxy+100,"Password changed");
-		delay(1500);
+                delay(1500);
                 adminfnt();
             }
             else
             {
-		settextjustify(1,1);
-		settextstyle(0,HORIZ_DIR,2.5);
+                settextjustify(1,1);
+                settextstyle(0,HORIZ_DIR,2.5);
                 outtextxy(maxx,maxy,"Incorrect Password ");
-		delay(2000);
+                delay(2000);
                 adminfnt();
             }
-	}
+        }
         break;
     case '3':
         cleardevice();
-	closegraph();
+        closegraph();
         textcolor(WHITE);
         textbackground(MAGENTA);
         ucom();
@@ -1039,8 +1055,8 @@ START1:
         settextjustify(1,1);
         settextstyle(0,HORIZ_DIR,2.5);
         outtextxy(maxx,maxy,"Wrong choice");
-	delay(1500);
-	adminfnt();
+        delay(1500);
+        adminfnt();
         break;
     }
 }
@@ -1125,7 +1141,7 @@ void user()
     int i,i1=-17;
     for(i=0;;)
     {
-	a=getch();
+        a=getch();
         sprintf(c,"%c",a);
         if((a>='a'&&a<='z')||(a>='A'&&a<='Z')||(a>='0'&&a<='9'))
         {
@@ -1139,13 +1155,13 @@ void user()
         if(a=='\b'&&i>=1)
         {
             cout<<"\b \b";
-	    setcolor(LIGHTRED);
-	    char ch1=219;
+            setcolor(LIGHTRED);
+            char ch1=219;
             sprintf(c,"%c",ch1);
             settextjustify(1,1);
             outtextxy(maxx-68+i1,maxy+50,c);
             --i;
-	    i1-=17;
+            i1-=17;
         }
         if(a=='\r')
         {
@@ -1165,7 +1181,7 @@ void user()
         delete[]filename1;
         delete[]name1;
         settextstyle(0,HORIZ_DIR,2.5);
-	settextjustify(1,1);
+        settextjustify(1,1);
         outtextxy(maxx,maxy+100,"User does not exist");
         getchar();
         cleardevice();
@@ -1179,14 +1195,14 @@ void user()
         fin1.read((char*)&w,sizeof(w));
         fin1.close();
         cleardevice();
-	settextstyle(0,HORIZ_DIR,3);
-	settextjustify(1,1);
+        settextstyle(0,HORIZ_DIR,3);
+        settextjustify(1,1);
         outtextxy(maxx-100,maxy,"Welcome");
         outtextxy(maxx+100,maxy,w.getname());
         outtextxy(maxx+120,maxy,"        !!");
-	delay(1000);
-	cleardevice();
-	closegraph();
+        delay(1000);
+        cleardevice();
+        closegraph();
         textbackground(RED);
         textcolor(WHITE);
         w.put1();
@@ -1205,7 +1221,7 @@ lb:
     while(choice!=0)
     {
         centerstring("Enter 1 for adding a company");
-	qe qe
+        qe qe
         centerstring("Enter 2 for no. of companies");
         qe qe
         centerstring("Enter 3 for displaying the list");
@@ -1219,13 +1235,13 @@ lb:
         gotoxy(40,14);
         cin>>choice;
         if(cin.fail())
-	{
-	    cin.clear();
+        {
+            cin.clear();
             cin.ignore();
             file.close();
             centerstring("Enter a number not a character: ");
-	    delay(2000);
-	    goto lb;
+            delay(2000);
+            goto lb;
         }
         switch(choice)
         {
@@ -1239,14 +1255,14 @@ lb:
         case 2:
             clrscr();
             int filesize;
-	    filesize=file.tellg();
-	    int n=filesize/sizeof(com);
+            filesize=file.tellg();
+            int n=filesize/sizeof(com);
             cout<<"The no.of companies in the file are "<<n<<endl;
             getchar();
             clrscr();
             break;
-	case 3:
-	    graphics(0);
+        case 3:
+            graphics(0);
             cleardevice();
             setbkcolor(MAGENTA);
             if(file.tellg()==0)
@@ -1259,19 +1275,19 @@ lb:
                 break;
             }
             else
-	    {
-		file.seekg(0,ios::beg);
+            {
+                file.seekg(0,ios::beg);
                 cout<<"The current contents of the files are "<<endl;
                 while(file.read((char*)&com,sizeof(com)))
                 {
                     textcolor(WHITE);
-		    com.putdata();
+                    com.putdata();
                     cout<<"Press Enter to continue...."<<endl;
                     getchar();
                 }
                 file.clear();
                 cleardevice();
-		closegraph();
+                closegraph();
                 textcolor(WHITE);
                 textbackground(MAGENTA);
             }
@@ -1279,13 +1295,13 @@ lb:
             break;
         case 4:
             file.close();
-	    admin();
-	    break;
+            admin();
+            break;
         case 5:
             clrscr();
             ofstream fout;
             fout.open("C:/TC/BIN/StockE/temp.dat",ios::binary);
-	    int ccode,check=0;
+            int ccode,check=0;
             cout<<"Enter company code whose record is to be deleted"<<endl;
             cin>>ccode;
             file.seekg(0,ios::beg);
@@ -1299,13 +1315,13 @@ lb:
                 {
                     fout.write((char*)&com,sizeof(com));
                 }
-	    }
-	    file.close();
+            }
+            file.close();
             fout.close();
             remove("C:/TC/BIN/StockE/company.dat");
             rename("C:/TC/BIN/StockE/temp.dat","C:/TC/BIN/StockE/company.dat");
             file.open("C:/TC/BIN/StockE/company.dat",ios::in|ios::out|ios::ate|ios::binary);
-	    if(check==0)
+            if(check==0)
             {
                 cout<<"Company code not found"<<endl;
             }
@@ -1319,8 +1335,8 @@ lb:
         default:
             gotoxy(35,16);
             cout<<"Wrong choice";
-	    file.close();
-	    getch();
+            file.close();
+            getch();
             clrscr();
             break;
         }
@@ -1339,13 +1355,13 @@ lb0:
         clrscr();
         centerstring("Enter 1 for no. of users");
         qe qe
-	centerstring("Enter 2 for displaying the users");
-	qe qe
+        centerstring("Enter 2 for displaying the users");
+        qe qe
         centerstring("Enter 3 for deleting users");
         qe qe
         centerstring("Enter 4 to go to administrator menu");
         qe qe
-	centerstring("Enter your choice");
+        centerstring("Enter your choice");
         qe qe
         gotoxy(40,12);
         cin>>choice;
@@ -1354,20 +1370,20 @@ lb0:
             cin.clear();
             cin.ignore();
             centerstring("Enter a number not a character: ");
-	    delay(2000);
+            delay(2000);
             goto lb0;
         }
         switch(choice)
         {
-	case 1:
-	    clrscr();
+        case 1:
+            clrscr();
             int count=0;
             fstream file;
             file.open("C:/TC/BIN/StockE/Users.dat",ios::in);
             if(!file)
-	    {
+            {
                 cerr<<"File does not exist"<<endl;
-		delay(1000);
+                delay(1000);
                 clrscr();
                 file.close();
                 goto lb0;
@@ -1379,18 +1395,18 @@ lb0:
                     count++;
             }
             file.close();
-	    cout<<"The no.of users in the file are "<<count<<endl;
-	    getchar();
+            cout<<"The no.of users in the file are "<<count<<endl;
+            getchar();
             clrscr();
             break;
         case 2:
             clrscr();
-	    fstream file1,file2;
+            fstream file1,file2;
             file1.open("C:/TC/BIN/StockE/Users.dat",ios::in);
             if(!file1)
             {
                 cerr<<"File not found"<<endl;
-		delay(1250);
+                delay(1250);
                 clrscr();
                 goto lb0;
             }
@@ -1399,13 +1415,13 @@ lb0:
             {
                 file1.getline(loc2,100);
                 if(loc2[0]=='C')
-		    p++;
-	    }
+                    p++;
+            }
             file1.close();
             if(p==0)
             {
                 cout<<"No users present in the database"<<endl;
-		delay(1250);
+                delay(1250);
                 clrscr();
                 goto lb0;
             }
@@ -1419,13 +1435,13 @@ lb0:
                 {
                     file2.getline(loc2,100);
                     fin.open(loc2,ios::in|ios::binary);
-		    if(!fin)
-			continue;
+                    if(!fin)
+                        continue;
                     fin.read((char*)&q,sizeof(q));
                     q.put2();
                     cout<<"Press Enter to continue...."<<endl;
                     getchar();
-		    fin.clear();
+                    fin.clear();
                     fin.close();
                 }
                 file2.clear();
@@ -1439,18 +1455,18 @@ lb0:
             user= new char[20];
             filename=new char[50];
             filename1=new char[50];
-	    cout<<"Enter the user name to be deleted: "<<endl;
-	    gets(user);
+            cout<<"Enter the user name to be deleted: "<<endl;
+            gets(user);
             strcpy(filename1,user);
             strcat(filename1,".dat");
             strcpy(filename,"C:/TC/BIN/StockE/");
             strcat(filename,filename1);
-	    fstream fins;
+            fstream fins;
             fins.open(filename,ios::in);
             if(!fins)
             {
                 cout<<"User not found"<<endl;
-		delay(1500);
+                delay(1500);
                 clrscr();
                 goto lb0;
             }
@@ -1459,13 +1475,13 @@ lb0:
                 cout<<"User successfully deleted"<<endl;
                 fins.close();
                 remove(filename);
-		char *pname,*pname1,*aname,*aname1;
-		pname=new char[50];
+                char *pname,*pname1,*aname,*aname1;
+                pname=new char[50];
                 pname1=new char[50];
                 aname=new char[50];
                 aname1=new char[50];
                 strcpy(pname1,user);
-		strcpy(aname1,user);
+                strcpy(aname1,user);
                 strcat(pname1,"share.dat");
                 strcat(aname1,"acco.dat");
                 strcpy(pname,"C:/TC/BIN/StockE/");
@@ -1477,15 +1493,15 @@ lb0:
                 remove(pname);
                 acco.open(aname,ios::binary);
                 remove(aname);
-		delay(1500);
+                delay(1500);
                 share.close();
-		acco.close();
-		clrscr();
+                acco.close();
+                clrscr();
                 delete[]pname;
                 delete[]pname1;
                 delete[]aname;
                 delete[]aname1;
-	    }
+            }
             fstream file3;
             file3.open("C:/TC/BIN/StockE/Users.dat",ios::in);
             ofstream fout;
@@ -1499,13 +1515,13 @@ lb0:
                 }
             }
             file3.close();
-	    fout.close();
-	    remove("C:/TC/BIN/StockE/Users.dat");
+            fout.close();
+            remove("C:/TC/BIN/StockE/Users.dat");
             rename("C:/TC/BIN/StockE/temp.dat","C:/TC/BIN/StockE/Users.dat");
             delete[]filename;
             delete[]user;
             delete[]filename1;
-	    break;
+            break;
         case 4:
             admin();
             break;
@@ -1539,13 +1555,13 @@ stock:
         break;
     case '2':
         clrscr();
-	sell(name);
-	break;
+        sell(name);
+        break;
     case '3':
         clrscr();
         break;
     default:
-	qe centerstring("Wrong choice ");
+        qe centerstring("Wrong choice ");
         getch();
         clrscr();
         goto stock;
@@ -1559,13 +1575,13 @@ void per(double fvalue,double cvalue)
         p=double(100.0-(cvalue/fvalue)*100.0);
         cout<<"Current value of each share: "<<setprecision(2)<<cvalue;
         qe
-	cout<<"Decrease: "<<setprecision(2)<<double(cvalue-fvalue)<<endl;
-	cout<<"Percentage decrease: "<<setprecision(2)<<"-"<<double(p)<<"%"<<endl;
+        cout<<"Decrease: "<<setprecision(2)<<double(cvalue-fvalue)<<endl;
+        cout<<"Percentage decrease: "<<setprecision(2)<<"-"<<double(p)<<"%"<<endl;
     }
     else if(cvalue>fvalue)
     {
         double p;
-	p=double(100.0-(fvalue/cvalue)*100.0);
+        p=double(100.0-(fvalue/cvalue)*100.0);
         cout<<"Current value of each share: "<<setprecision(2)<<cvalue;
         qe
         cout<<"Increase: "<<setprecision(2)<<"+"<<double(cvalue-fvalue)<<endl;
@@ -1599,7 +1615,7 @@ void rand_double(double f,double&c)
     double ran_val=1.0*rand()/(RAND_MAX/2)+rand()%y;
     if(x<50)
     {
-	c=double(f+ran_val);
+        c=double(f+ran_val);
     }
     else
     {
@@ -1625,12 +1641,12 @@ void portfolio(char n[20])
     if(!inshare)
     {
         cout<<"Press Enter to continue...."<<endl;
-	getchar();
+        getchar();
         goto f;
     }
     else if(inshare.tellg()==0)
     {
-	graphics(0);
+        graphics(0);
         settextstyle(0,HORIZ_DIR,2.5);
         int maxx=getmaxx()/2;
         int maxy=getmaxy()/2;
@@ -1639,13 +1655,13 @@ void portfolio(char n[20])
         settextjustify(1,1);
         outtextxy(maxx,maxy,"No shares bought yet");
         getch();
-	goto f;
+        goto f;
     }
     else
     {
         settextstyle(0,HORIZ_DIR,2);
         settextjustify(1,1);
-	outtextxy(getmaxx()/2,(getmaxx()/2)-300,"PORTFOLIO");
+        outtextxy(getmaxx()/2,(getmaxx()/2)-300,"PORTFOLIO");
         qe qe qe qe
         inshare.seekg(0,ios::beg);
         while(inshare.read((char*)&s2,sizeof(s2)))
@@ -1680,7 +1696,7 @@ void balance(char name[20])
     acc.open(bname,ios::binary);
     if(!acc)
     {
-	cout<<"Press Enter to continue...."<<endl;
+        cout<<"Press Enter to continue...."<<endl;
         getchar();
         clrscr();
         goto balance;
@@ -1719,13 +1735,13 @@ buy:
         textbackground(RED);
         textcolor(WHITE);
         int check=1;
-	clrscr();
-	centerstring("Enter the company code");
+        clrscr();
+        centerstring("Enter the company code");
         qe
         gotoxy(40,3);
         cin>>code;
         fis.seekg(0,ios::beg);
-	while(fis.read((char*)&e,sizeof(e)))
+        while(fis.read((char*)&e,sizeof(e)))
         {
             if(e.getcode()==code)
             {
@@ -1739,113 +1755,113 @@ buy:
             qe
             getchar();
             clrscr();
-	    fis.close();
-	    goto buy;
+            fis.close();
+            goto buy;
         }
         else
-	{
-	    e.putdata();
-	    qe
-	    cout<<"Press enter to continue....";
-	    qe
-	    getch();
-	    check=0;
+        {
+            e.putdata();
+            qe
+            cout<<"Press enter to continue....";
+            qe
+            getch();
+            check=0;
 gb:
-	    char ch;
-	    clrscr();
-	    centerstring("Enter 1 to view the graph of this company");
-	    qe
-	    centerstring("Enter 2 to continue buying");
-	    qe
-	    gotoxy(40,4);
-	    cin>>ch;
-	    switch(ch)
-	    {
-	    case '1':
-		graphics(0);
-		char code[4],fval[10],cval[10];
-		outtextxy(10,20,"Company Name:");
-		outtextxy(130,20,e.cname);
-		outtextxy(10,40,"Security Code:");
-		sprintf(code,"%d",e.ccode);
-		outtextxy(130,40,code);
-		memset(code,0,4);
-		outtextxy(10,60,"Face Value:");
-		sprintf(fval,"%.2f",e.fvalue);
-		outtextxy(130,60,fval);
-		memset(fval,0,10);
-		outtextxy(10,80,"Current Value:");
-		sprintf(cval,"%.2f",e.cvalue);
-		outtextxy(130,80,cval);
-		memset(cval,0,10);
-		outtextxy(450,20,"x-axis: Time(Minutes)");
-		outtextxy(450,40,"y-axis: Current Value");
-		int color=getcolor();
-		if(e.cvalue>e.fvalue)
-		{
-		    upg();
-		    setcolor(color);
-		}
-		else if(e.cvalue<e.fvalue)
-		{
-		    downg();
-		    setcolor(color);
-		}
-		double yarr[100],xarr[100];
-		int t=0,x=0;
-		for(int i=0; i<99; i++)
-		{
-		    if(t%10==0)
-		    {
-			t++;
-			yarr[i]=e.cvalue+random(100);
-		    }
-		    else if(t%5==0)
-		    {
-			t++;
-			yarr[i]=abs(e.cvalue-random(100));
-		    }
-		    else
-		    {
-			yarr[i]=e.fvalue;
-			t++;
-		    }
-		    xarr[i]=x;
-		    x=x+1;
-		}
-		yarr[i]=e.cvalue;
-		xarr[i]=100.0;
-		setbkcolor(BLACK);
-		int colour[]= {1,2,3,4,5,7,20,57,58,59,60,61,62,63};
-		randomize();
-		i=random(14);
-		XYScatterGraph myGraph1(colour[i],100);
-		myGraph1.FillPoints(yarr,xarr,100);
-		myGraph1.DrawGrid(1);
-		myGraph1.Draw();
-		getch();
-		closegraph();
-		restorecrtmode();
-		goto gb;
-	    case '2':
+            char ch;
+            clrscr();
+            centerstring("Enter 1 to view the graph of this company");
+            qe
+            centerstring("Enter 2 to continue buying");
+            qe
+            gotoxy(40,4);
+            cin>>ch;
+            switch(ch)
+            {
+            case '1':
+                graphics(0);
+                char code[4],fval[10],cval[10];
+                outtextxy(10,20,"Company Name:");
+                outtextxy(130,20,e.cname);
+                outtextxy(10,40,"Security Code:");
+                sprintf(code,"%d",e.ccode);
+                outtextxy(130,40,code);
+                memset(code,0,4);
+                outtextxy(10,60,"Face Value:");
+                sprintf(fval,"%.2f",e.fvalue);
+                outtextxy(130,60,fval);
+                memset(fval,0,10);
+                outtextxy(10,80,"Current Value:");
+                sprintf(cval,"%.2f",e.cvalue);
+                outtextxy(130,80,cval);
+                memset(cval,0,10);
+                outtextxy(450,20,"x-axis: Time(Minutes)");
+                outtextxy(450,40,"y-axis: Current Value");
+                int color=getcolor();
+                if(e.cvalue>e.fvalue)
+                {
+                    upg();
+                    setcolor(color);
+                }
+                else if(e.cvalue<e.fvalue)
+                {
+                    downg();
+                    setcolor(color);
+                }
+                double yarr[100],xarr[100];
+                int t=0,x=0;
+                for(int i=0; i<99; i++)
+                {
+                    if(t%10==0)
+                    {
+                        t++;
+                        yarr[i]=e.cvalue+random(100);
+                    }
+                    else if(t%5==0)
+                    {
+                        t++;
+                        yarr[i]=abs(e.cvalue-random(100));
+                    }
+                    else
+                    {
+                        yarr[i]=e.fvalue;
+                        t++;
+                    }
+                    xarr[i]=x;
+                    x=x+1;
+                }
+                yarr[i]=e.cvalue;
+                xarr[i]=100.0;
+                setbkcolor(BLACK);
+                int colour[]= {1,2,3,4,5,7,20,57,58,59,60,61,62,63};
+                randomize();
+                i=random(14);
+                XYScatterGraph myGraph1(colour[i],100);
+                myGraph1.FillPoints(yarr,xarr,100);
+                myGraph1.DrawGrid(1);
+                myGraph1.Draw();
+                getch();
+                closegraph();
+                restorecrtmode();
+                goto gb;
+            case '2':
 nss:
-		clrscr();
-		char *sname,*sname1;
-		sname=new char[50];
-		sname1=new char[50];
-		strcpy(sname1,name);
+                clrscr();
+                char *sname,*sname1;
+                sname=new char[50];
+                sname1=new char[50];
+                strcpy(sname1,name);
                 strcat(sname1,"share.dat");
                 strcpy(sname,"C:/TC/BIN/StockE/");
                 strcat(sname,sname1);
                 ofstream fshare;
                 fshare.open(sname,ios::ate|ios::binary);
-		delete[]sname1;
+                delete[]sname1;
                 delete[]sname;
                 shares s1;
                 int ns;
                 centerstring("Enter the no.of shares you want to buy");
                 qe
-		gotoxy(40,3);
+                gotoxy(40,3);
                 cin>>ns;
                 if(cin.fail())
                 {
@@ -1859,13 +1875,13 @@ nss:
                 }
                 if(e.nshares==0)
                 {
-		    qe centerstring("Sorry this Company has no shares available at this time!!");
+                    qe centerstring("Sorry this Company has no shares available at this time!!");
                     qe
                     getch();
                     qe centerstring("Contact admin to delist the company");
                     qe
                     getch();
-		    clrscr();
+                    clrscr();
                     fshare.close();
                     fis.close();
                     break;
@@ -1879,13 +1895,13 @@ nss:
                     goto nss;
                 }
                 else if(ns<=0)
-		{
+                {
                     qe centerstring("Number of shares cannot be negative or 0.");
                     getchar();
                     clrscr();
                     fshare.close();
                     fis.close();
-		    break;
+                    break;
                 }
                 else if(e.nshares<0)
                 {
@@ -1899,13 +1915,13 @@ nss:
                     break;
                 }
                 else
-		{
+                {
                     account a2;
                     char *bname,*bname1;
                     bname=new char[50];
                     bname1=new char[50];
                     strcpy(bname1,name);
-		    strcat(bname1,"acco.dat");
+                    strcat(bname1,"acco.dat");
                     strcpy(bname,"C:/TC/BIN/StockE/");
                     strcat(bname,bname1);
                     ifstream acc;
@@ -1918,20 +1934,20 @@ nss:
                     if(a2.balance<500)
                     {
                         clrscr();
-			graphics(0);
-			setbkcolor(RED);
+                        graphics(0);
+                        setbkcolor(RED);
                         setcolor(WHITE);
                         cout<<"Transaction could not be completed. (ERROR::Not enough cash)"<<endl;
                         getch();
                         cout<<"Add the required cash to complete the transaction"<<endl;
                         getch();
-			fshare.close();
+                        fshare.close();
                         fis.close();
                         textbackground(RED);
                         textcolor(WHITE);
                         break;
                     }
-		    graphics(0);
+                    graphics(0);
                     int maxx=getmaxx()/2;
                     int maxy=getmaxy()/2;
                     setbkcolor(RED);
@@ -1939,33 +1955,33 @@ nss:
                     settextstyle(0,HORIZ_DIR,2);
                     outtextxy(maxx-200,maxy-150,"UPDATED BALANCE");
                     outtextxy(maxx-200,maxy-50,"User Name: ");
-		    outtextxy(maxx-42,maxy-50,a2.name);
+                    outtextxy(maxx-42,maxy-50,a2.name);
                     outtextxy(maxx-200,maxy-10,"Account Number: ");
                     outtextxy(maxx+42,maxy-10,a2.acno);
                     outtextxy(maxx-200,maxy+30,"Available Balance: ");
                     char bal[8];
                     sprintf(bal,"%d",a2.balance);
-		    outtextxy(maxx+100,maxy+30,bal);
+                    outtextxy(maxx+100,maxy+30,bal);
                     outtextxy(maxx-200,maxy+75,"Press Enter to continue....");
                     getch();
                     cleardevice();
                     settextjustify(1,1);
                     settextstyle(0,HORIZ_DIR,3);
                     outtextxy(maxx,maxy,"Purchase Successful!!");
-		    delay(1000);
+                    delay(1000);
                     cleardevice();
                     closegraph();
                     restorecrtmode();
                     ofstream acc1;
                     acc1.open(bname,ios::binary);
                     acc1.write((char*)&a2,sizeof(a2));
-		    acc1.close();
+                    acc1.close();
                     delete[]bname;
                     delete[]bname1;
                     e.nshares-=ns;
                     s1.nos=ns;
                     s1.cvalue=e.cvalue;
-		    strcpy(s1.compname,e.cname);
+                    strcpy(s1.compname,e.cname);
                     s1.fvalue=e.fvalue;
                     fshare.write((char*)&s1,sizeof(s1));
                     company y;
@@ -1979,13 +1995,13 @@ nss:
                             fit.write((char*)&y,sizeof(y));
                         }
                     }
-		    fit.write((char*)&e,sizeof(e));
+                    fit.write((char*)&e,sizeof(e));
                     fis.close();
                     fit.close();
                     fshare.close();
                     remove("C:/TC/BIN/StockE/company.dat");
                     rename("C:/TC/BIN/StockE/temp.dat","C:/TC/BIN/StockE/company.dat");
-		    buycheck(name,s1.compname);
+                    buycheck(name,s1.compname);
                 }
                 break;
             default:
@@ -1997,15 +2013,15 @@ nss:
             goto buy;
         }
     case '2':
-	graphics(0);
+        graphics(0);
         cleardevice();
-	setbkcolor(RED);
+        setbkcolor(RED);
         fis.seekg(0,ios::beg);
         while(fis.read((char*)&e,sizeof(e)))
         {
             textcolor(WHITE);
             e.putdata();
-	    cout<<"Press Enter to continue...."<<endl;
+            cout<<"Press Enter to continue...."<<endl;
             getchar();
         }
         fis.clear();
@@ -2019,13 +2035,13 @@ nss:
         cleardevice();
         closegraph();
         clrscr();
-	break;
+        break;
     default:
         centerstring("Wrong choice ");
         qe
         getch();
         fis.close();
-	goto buy;
+        goto buy;
     }
 }
 void sell(char name[20])
@@ -2059,13 +2075,13 @@ sell:
         {
             if(strcmp(h.getname(),n)==0)
             {
-		scheck=0;
+                scheck=0;
                 break;
             }
         }
         if(scheck==1)
         {
-	    centerstring("This company name does not exist");
+            centerstring("This company name does not exist");
             qe
             getchar();
             clrscr();
@@ -2079,13 +2095,13 @@ sell:
             pname=new char[50];
             pname1=new char[50];
             strcpy(pname1,name);
-	    strcat(pname1,"share.dat");
+            strcat(pname1,"share.dat");
             strcpy(pname,"C:/TC/BIN/StockE/");
             strcat(pname,pname1);
             fstream inshare1;
             inshare1.open(pname,ios::in|ios::out|ios::ate|ios::binary);
             delete[]pname1;
-	    inshare1.seekg(0,ios::beg);
+            inshare1.seekg(0,ios::beg);
             while(inshare1.read((char*)&s3,sizeof(s3)))
             {
                 if(strcmp(s3.compname,n)==0)
@@ -2099,13 +2115,13 @@ sell:
                 centerstring("No transaction has taken place with this company");
                 qe
                 getch();
-		clrscr();
+                clrscr();
                 fib.close();
                 inshare1.close();
                 delete[]pname;
                 goto sell;
             }
-	    else
+            else
             {
                 s3.putshares();
                 getch();
@@ -2119,13 +2135,13 @@ sell:
                 {
                     account a1;
                     char *bname,*bname1;
-		    bname=new char[50];
+                    bname=new char[50];
                     bname1=new char[50];
                     strcpy(bname1,name);
                     strcat(bname1,"acco.dat");
                     strcpy(bname,"C:/TC/BIN/StockE/");
                     strcat(bname,bname1);
-		    fstream acc;
+                    fstream acc;
                     acc.open(bname,ios::in|ios::binary);
                     acc.seekg(0,ios::beg);
                     acc.read((char*)&a1,sizeof(a1));
@@ -2133,19 +2149,19 @@ sell:
                     acc.close();
                     a1.putdata();
                     a1.balance+=int(ns*h.cvalue);
-		    graphics(0);
+                    graphics(0);
                     int maxx=getmaxx()/2;
                     int maxy=getmaxy()/2;
                     setbkcolor(RED);
                     setcolor(WHITE);
                     settextstyle(0,HORIZ_DIR,2);
-		    outtextxy(maxx-200,maxy-150,"UPDATED BALANCE");
+                    outtextxy(maxx-200,maxy-150,"UPDATED BALANCE");
                     outtextxy(maxx-200,maxy-50,"User Name: ");
                     outtextxy(maxx-42,maxy-50,a1.name);
                     outtextxy(maxx-200,maxy-10,"Account Number: ");
                     outtextxy(maxx+42,maxy-10,a1.acno);
                     outtextxy(maxx-200,maxy+30,"Available Balance: ");
-		    char bal[8];
+                    char bal[8];
                     sprintf(bal,"%d",a1.balance);
                     outtextxy(maxx+100,maxy+30,bal);
                     outtextxy(maxx-200,maxy+75,"Press Enter to continue....");
@@ -2154,18 +2170,18 @@ sell:
                     settextjustify(1,1);
                     settextstyle(0,HORIZ_DIR,3);
                     outtextxy(maxx,maxy,"Transaction Successful!!");
-		    delay(1000);
+                    delay(1000);
                     cleardevice();
                     closegraph();
                     restorecrtmode();
                     ofstream acc1;
-		    acc1.open(bname,ios::binary);
+                    acc1.open(bname,ios::binary);
                     acc1.write((char*)&a1,sizeof(a1));
                     acc1.close();
                     delete[]bname;
                     delete[]bname1;
                     s3.nos-=ns;
-		    shares s4;
+                    shares s4;
                     fstream fsell;
                     ofstream ftemp,ftemp1;
                     fsell.open(pname,ios::in|ios::out|ios::ate|ios::binary);
@@ -2179,13 +2195,13 @@ sell:
                     ftemp.write((char*)&s3,sizeof(s3));
                     fsell.close();
                     ftemp.close();
-		    remove(pname);
+                    remove(pname);
                     rename("C:/TC/BIN/StockE/temp.dat",pname);
                     h.nshares+=ns;
                     company z;
                     ftemp1.open("C:/TC/BIN/StockE/temp.dat",ios::binary);
                     fib.seekg(0,ios::beg);
-		    while(fib.read((char*)&z,sizeof(z)))
+                    while(fib.read((char*)&z,sizeof(z)))
                     {
                         if(z.getcode()!=h.getcode())
                             ftemp1.write((char*)&z,sizeof(z));
@@ -2199,13 +2215,13 @@ sell:
                     sellcheck(pname);
                     delete[]pname;
                 }
-		else if(ns<=0)
+                else if(ns<=0)
                 {
                     centerstring("Number of shares cannot be negative or 0.");
                     qe
                     getch();
                     fib.close();
-		    delete[]pname;
+                    delete[]pname;
                     break;
                 }
                 inshare1.close();
@@ -2245,7 +2261,7 @@ void buycheck(char name[20],char cname[20])
     while(inshare2.read((char*)&s5,sizeof(s5)))
     {
         if(strcmp(s5.compname,cname)==0)
-	{
+        {
             d++;
             if(d==1)
             {
@@ -2265,7 +2281,7 @@ void buycheck(char name[20],char cname[20])
         shares s7;
         inshare2.close();
         fstream inshare3;
-	inshare3.open(dname,ios::in|ios::out|ios::ate|ios::binary);
+        inshare3.open(dname,ios::in|ios::out|ios::ate|ios::binary);
         ofstream ftemp;
         ftemp.open("C:/TC/BIN/StockE/temp.dat",ios::binary);
         inshare3.seekg(0,ios::beg);
@@ -2279,7 +2295,7 @@ void buycheck(char name[20],char cname[20])
         ftemp.close();
         remove(dname);
         rename("C:/TC/BIN/StockE/temp.dat",dname);
-	delete[]dname;
+        delete[]dname;
     }
     else
     {
@@ -2293,7 +2309,7 @@ void sellcheck(char*pname)
     for(int i=0; i<7; i++)
     {
         cout<<".";
-	delay(250);
+        delay(250);
     }
     shares s8;
     int check=1;
@@ -2305,7 +2321,7 @@ void sellcheck(char*pname)
     while(inshare4.read((char*)&s8,sizeof(s8)))
     {
         if(s8.nos==0)
-	{
+        {
             check=0;
         }
         else
@@ -2319,13 +2335,13 @@ void sellcheck(char*pname)
     rename("C:/TC/BIN/StockE/temp.dat",pname);
     if(check==1)
     {
-	cout<<endl<<"Your portfolio is alright."<<endl;
+        cout<<endl<<"Your portfolio is alright."<<endl;
         getch();
     }
     else
     {
         cout<<endl<<"The company you sold now has 0 shares in your portfolio."<<endl;
-	getch();
+        getch();
         cout<<"Portfolio has been successfully repaired!!"<<endl;
         getch();
     }
@@ -2369,7 +2385,7 @@ void intro()
         settextjustify(1,1);
         settextstyle(2,HORIZ_DIR,i);
         outtextxy(x,y,"I N T R O D U C T I O N");
-	delay(500);
+        delay(500);
         cleardevice();
     }
     setbkcolor(GREEN);

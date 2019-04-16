@@ -125,7 +125,7 @@ void XYScatterGraph::DrawGrid(int index)
         if(index == 1)
             outtextxy(LTMARGIN - 50, ypos - 5, buf);
         else
-            outtextxy(LTMARGIN + xmax + 10 , ypos - 5, buf);
+            outtextxy(LTMARGIN + xmax + 10, ypos - 5, buf);
     }
 }
 void XYScatterGraph::Draw()
